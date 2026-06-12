@@ -1,1675 +1,1001 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Refilwes Beauty Parlour — Luxury Wigs & Extensions</title>
+<meta name="description" content="Refilwes Beauty Parlour — Luxury bodywave and premium wigs. Shop, order via WhatsApp, fast delivery."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=500;600;700;800&family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-  :root {
-    --nude: #F5EDE3;
-    --blush: #E8C4B0;
-    --blush-light: #F2DDD0;
-    --espresso: #2C1A0E;
-    --espresso-mid: #4A2E1A;
-    --espresso-light: #7A5040;
-    --offwhite: #FAF7F4;
-    --gold: #B08D5A;
-    --gold-light: #C9A96E;
-    --charcoal: #1C1C1C;
-    --white: #FFFFFF;
-    --card-shadow: 0 4px 24px rgba(44,26,14,0.08);
-    --card-shadow-hover: 0 12px 40px rgba(44,26,14,0.16);
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'DM Sans', sans-serif;
-    --radius: 16px;
-    --radius-sm: 8px;
-    --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  :root{
+    --bg:#fbf8f4;
+    --bg-2:#f3ede3;
+    --ink:#0d0d0d;
+    --ink-2:#2a2724;
+    --muted:#6b6358;
+    --gold:#c9a44c;
+    --gold-2:#e6c878;
+    --line:rgba(13,13,13,.08);
+    --white:#ffffff;
+    --shadow-sm:0 2px 8px rgba(13,13,13,.05);
+    --shadow:0 18px 50px -18px rgba(13,13,13,.25);
+    --radius:18px;
   }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,h5{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:1240px;margin:0 auto;padding:0 24px}
+  .gold{color:var(--gold)}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 28px;border-radius:999px;font-weight:600;font-size:.95rem;
+    cursor:pointer;border:none;transition:all .3s cubic-bezier(.2,.7,.2,1);
+    letter-spacing:.02em;
+  }
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{background:var(--gold);color:var(--ink);transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--ink)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(201,164,76,.6)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .btn:active{transform:scale(.97)}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  /* NAV */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    backdrop-filter:saturate(180%) blur(18px);
+    -webkit-backdrop-filter:saturate(180%) blur(18px);
+    background:rgba(251,248,244,.7);
+    border-bottom:1px solid transparent;
+    transition:all .35s ease;
+  }
+  .nav.scrolled{background:rgba(251,248,244,.9);border-bottom-color:var(--line);box-shadow:var(--shadow-sm)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1240px;margin:0 auto;transition:padding .35s ease}
+  .nav.scrolled .nav-inner{padding:12px 24px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700}
+  .logo-mark{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--ink),#2a2724);color:var(--gold);display:grid;place-items:center;font-weight:700;font-family:'Playfair Display',serif}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:.92rem;font-weight:500;color:var(--ink-2);position:relative;padding:6px 0}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:width .3s ease}
+  .nav-links a:hover::after{width:100%}
+  .cart-btn{
+    position:relative;width:46px;height:46px;border-radius:50%;
+    background:var(--ink);color:#fff;display:grid;place-items:center;
+    cursor:pointer;border:none;transition:all .3s ease;
+  }
+  .cart-btn:hover{background:var(--gold);color:var(--ink);transform:scale(1.06)}
+  .cart-badge{
+    position:absolute;top:-4px;right:-4px;min-width:22px;height:22px;padding:0 6px;
+    background:var(--gold);color:var(--ink);border-radius:999px;font-size:.72rem;font-weight:700;
+    display:grid;place-items:center;border:2px solid var(--bg);
+    transform:scale(0);transition:transform .25s cubic-bezier(.34,1.56,.64,1);
+  }
+  .cart-badge.show{transform:scale(1)}
+  .cart-badge.bump{animation:bump .35s ease}
+  @keyframes bump{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer}
 
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--sans);
-    background: var(--offwhite);
-    color: var(--espresso);
-    line-height: 1.6;
-    overflow-x: hidden;
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:160px 0 100px;
+    background: 
+      linear-gradient(to bottom, rgba(13,13,13,0.75) 0%, rgba(26,24,22,0.65) 50%, rgba(13,13,13,0.85) 100%),
+      url('https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1800&q=80') center/cover no-repeat fixed;
   }
-
-  /* ===== NAVBAR ===== */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(250,247,244,0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(176,141,90,0.2);
-    padding: 0 2rem;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: box-shadow var(--transition);
-  }
-  nav.scrolled { box-shadow: 0 2px 20px rgba(44,26,14,0.1); }
-
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--espresso);
-    letter-spacing: 0.04em;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
-  .nav-logo span {
-    font-size: 0.65rem;
-    font-family: var(--sans);
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    align-items: center;
-  }
-  .nav-links a {
-    font-size: 0.8rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--espresso-mid);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color var(--transition);
-    position: relative;
-  }
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--gold);
-    transition: width var(--transition);
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-links a:hover::after { width: 100%; }
-
-  .cart-btn {
-    background: none;
-    border: 1.5px solid var(--espresso);
-    border-radius: 50px;
-    padding: 8px 18px;
-    font-family: var(--sans);
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    color: var(--espresso);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all var(--transition);
-    position: relative;
-  }
-  .cart-btn:hover {
-    background: var(--espresso);
-    color: var(--offwhite);
-  }
-  .cart-badge {
-    background: var(--gold);
-    color: white;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    font-size: 0.65rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    transition: transform var(--transition);
-  }
-  .cart-badge.shake {
-    animation: cartShake 0.4s cubic-bezier(0.36,0.07,0.19,0.97);
-  }
-  @keyframes cartShake {
-    10%,90%{transform:translate3d(-1px,0,0) rotate(-2deg)}
-    20%,80%{transform:translate3d(2px,0,0) rotate(2deg)}
-    30%,50%,70%{transform:translate3d(-3px,0,0)}
-    40%,60%{transform:translate3d(3px,0,0)}
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-  }
-  .hamburger span {
-    display: block;
-    width: 22px;
-    height: 1.5px;
-    background: var(--espresso);
-    transition: all var(--transition);
-  }
-
-  /* ===== HERO ===== */
-  .hero {
-    min-height: calc(100vh - 70px);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    overflow: hidden;
-  }
-
-  .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5rem 4rem 5rem 5rem;
-    background: var(--offwhite);
-    position: relative;
-  }
-  .hero-left::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: radial-gradient(ellipse at bottom left, rgba(232,196,176,0.3) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .hero-eyebrow {
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.8s forwards 0.2s;
-  }
-  .hero-title {
-    font-family: var(--serif);
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
-    font-weight: 300;
-    line-height: 1.1;
-    letter-spacing: 0.01em;
-    color: var(--espresso);
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.9s forwards 0.35s;
-  }
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
-  .hero-desc {
-    font-size: 0.95rem;
-    color: var(--espresso-light);
-    line-height: 1.7;
-    max-width: 380px;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.9s forwards 0.5s;
-  }
-  .hero-ctas {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.9s forwards 0.65s;
-  }
-
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-right {
-    position: relative;
-    overflow: hidden;
-    background: var(--nude);
-  }
-
-  .carousel {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  .carousel-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 1s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .carousel-slide.active { opacity: 1; }
-  .carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.05);
-    transition: transform 6s ease;
-  }
-  .carousel-slide.active img { transform: scale(1); }
-
-  .carousel::after {
-    content: '';
-    position: absolute;
-    left: 0; top: 0;
-    width: 60px; height: 100%;
-    background: linear-gradient(to right, var(--offwhite), transparent);
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .carousel-text {
-    position: absolute;
-    bottom: 2.5rem;
-    right: 2rem;
-    z-index: 5;
-    text-align: right;
-  }
-  .carousel-label {
-    font-family: var(--serif);
-    font-size: 1rem;
-    font-style: italic;
-    color: white;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-    letter-spacing: 0.04em;
-  }
-
-  .carousel-dots {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 5;
-  }
-  .carousel-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    cursor: pointer;
-    transition: all var(--transition);
-    border: none;
-    padding: 0;
-  }
-  .carousel-dot.active {
-    background: white;
-    width: 20px;
-    border-radius: 3px;
-  }
-
-  /* ===== SECTIONS ===== */
-  section { padding: 6rem 5vw; }
-
-  .section-label {
-    font-family: var(--sans);
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.15;
-    color: var(--espresso);
-    margin-bottom: 1rem;
-  }
-  .section-title em { font-style: italic; color: var(--gold); }
-  .section-sub {
-    font-size: 0.92rem;
-    color: var(--espresso-light);
-    max-width: 480px;
-    line-height: 1.7;
-    margin-bottom: 3rem;
-  }
-
-  /* ===== PRODUCT GRID ===== */
-  #shop { background: var(--offwhite); }
-
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .product-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: transform var(--transition), box-shadow var(--transition);
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  .product-card.visible {
-    animation: fadeUp 0.6s forwards;
-  }
-  .product-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--card-shadow-hover);
-  }
-
-  .product-img-wrap {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 3/4;
-    background: var(--nude);
-  }
-  .product-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
-  }
-  .product-card:hover .product-img-wrap img { transform: scale(1.08); }
-
-  .product-tag {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background: var(--espresso);
-    color: var(--offwhite);
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-weight: 500;
-  }
-  .product-tag.new { background: var(--gold); }
-
-  .product-wishlist {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: rgba(250,247,244,0.9);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    transition: all var(--transition);
-    color: var(--espresso-light);
-  }
-  .product-wishlist:hover { background: var(--blush); color: var(--espresso); }
-  .product-wishlist.liked { color: #c0392b; }
-
-  .product-body { padding: 1.25rem 1.25rem 1.5rem; }
-  .product-category {
-    font-size: 0.68rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 0.4rem;
-  }
-  .product-name {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--espresso);
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.01em;
-  }
-  .product-desc {
-    font-size: 0.8rem;
-    color: var(--espresso-light);
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-  .product-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-  }
-  .product-price {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--espresso);
-  }
-  .product-price .currency { font-size: 0.85rem; font-weight: 400; vertical-align: top; margin-top: 4px; display: inline-block; }
-
-  .add-cart-btn {
-    background: var(--espresso);
-    color: var(--offwhite);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-family: var(--sans);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all var(--transition);
-    flex-shrink: 0;
-  }
-  .add-cart-btn:hover {
-    background: var(--gold);
-    transform: scale(1.04);
-  }
-  .add-cart-btn:active { transform: scale(0.97); }
-
-  /* ===== FEATURES ===== */
-  .features-section {
-    background: var(--espresso);
-    padding: 5rem 5vw;
-  }
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2.5rem;
-  }
-  .feature-item {
+  .hero-grid{
+    position:relative;
+    display:block;
+    width:100%;
+    max-width:850px;
+    margin: 0 auto;
     text-align: center;
-    padding: 1.5rem;
   }
-  .feature-icon { font-size: 2rem; margin-bottom: 1rem; }
-  .feature-title {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    color: var(--blush-light);
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.03em;
+  .hero-content {
+    position: relative;
+    padding-right: 0;
   }
-  .feature-desc {
-    font-size: 0.8rem;
-    color: rgba(232,196,176,0.6);
-    line-height: 1.6;
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:.85rem;
+    font-weight:600;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--gold-2);
+    margin-bottom:24px
+  }
+  .eyebrow::before, .eyebrow::after{
+    content:'';
+    width:24px;
+    height:1px;
+    background:var(--gold-2);
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.8rem);
+    line-height:1.1;
+    margin-bottom:24px;
+    color: #fff;
+    font-weight: 700;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-2);font-weight:500}
+  .hero p{
+    font-size:1.15rem;
+    color:rgba(255,255,255,0.85);
+    max-width:620px;
+    margin: 0 auto 40px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .hero-cta .btn-ghost {
+    color: #fff;
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .hero-cta .btn-ghost:hover {
+    background: #fff;
+    color: var(--ink);
+  }
+  .hero-stats{
+    display:flex;
+    gap:48px;
+    justify-content:center;
+    margin-top:56px;
+    padding-top:36px;
+    border-top:1px solid rgba(255,255,255,0.15);
+  }
+  .hero-stats div{display:flex;flex-direction:column}
+  .hero-stats strong{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold-2)}
+  .hero-stats span{font-size:.85rem;color:rgba(255,255,255,0.65);letter-spacing:.05em}
+
+  /* ABOUT US SECTION */
+  .about{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+  }
+  .about-text h2{
+    font-size:clamp(2rem, 3.5vw, 2.8rem);
+    margin-bottom:20px;
+    line-height:1.2;
+  }
+  .about-text p{
+    color:var(--muted);
+    font-size:1.05rem;
+    margin-bottom:24px;
+  }
+  .about-features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin-top:32px;
+  }
+  .about-feat-item i{
+    color:var(--gold);
+    font-size:1.4rem;
+    margin-bottom:10px;
+  }
+  .about-feat-item h4{
+    font-size:1.05rem;
+    margin-bottom:6px;
+  }
+  .about-feat-item p{
+    font-size:.9rem;
+    color:var(--muted);
+    margin-bottom:0;
+  }
+  .about-image{
+    position:relative;
+    border-radius:var(--radius);
+    overflow:hidden;
+    aspect-ratio:1/1.2;
+    box-shadow:var(--shadow);
+  }
+  .about-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
   }
 
-  /* ===== SOCIAL PROOF ===== */
-  #social { background: var(--nude); }
-  .social-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+  /* GALLERY SECTION */
+  .gallery{
+    background:var(--bg);
   }
-  .social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
   }
-  .social-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.25rem 1.5rem;
-    background: var(--white);
-    border-radius: var(--radius-sm);
-    text-decoration: none;
-    color: var(--espresso);
-    font-weight: 500;
-    font-size: 0.9rem;
-    box-shadow: var(--card-shadow);
-    transition: all var(--transition);
+  .gallery-item{
+    position:relative;
+    border-radius:12px;
+    overflow:hidden;
+    aspect-ratio:1/1;
+    box-shadow:var(--shadow-sm);
+    cursor:pointer;
   }
-  .social-link:hover {
-    transform: translateX(8px);
-    box-shadow: var(--card-shadow-hover);
+  .gallery-item.tall{
+    aspect-ratio:1/1.35;
+    grid-row:span 2;
   }
-  .social-icon {
-    width: 42px; height: 42px;
+  .gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .gallery-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(13,13,13,0.85), transparent 70%);
+    display:flex;
+    align-items:flex-end;
+    padding:20px;
+    opacity:0;
+    transition:opacity .4s ease;
+  }
+  .gallery-overlay span{
+    color:#fff;
+    font-family:'Playfair Display',serif;
+    font-size:1.1rem;
+    transform:translateY(10px);
+    transition:transform .4s cubic-bezier(.2,.7,.2,1);
+  }
+  .gallery-item:hover img{
+    transform:scale(1.08);
+  }
+  .gallery-item:hover .gallery-overlay{
+    opacity:1;
+  }
+  .gallery-item:hover .gallery-overlay span{
+    transform:translateY(0);
+  }
+
+  /* SECTION STANDARD CHASSIS */
+  section{padding:100px 0;scroll-margin-top:80px}
+  .section-head{text-align:center;max-width:680px;margin:0 auto 60px}
+  .section-head h2{font-size:clamp(2rem,3.6vw,3rem);margin-bottom:14px}
+  .section-head p{color:var(--muted);font-size:1.05rem}
+
+  /* PRODUCTS */
+  .products{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%)}
+  .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .product{
+    background:#fff;border-radius:var(--radius);overflow:hidden;
+    transition:transform .4s ease,box-shadow .4s ease;
+    display:flex;flex-direction:column;
+  }
+  .product:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .product-img{aspect-ratio:1/1.15;overflow:hidden;position:relative;background:#eee}
+  .product-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .product:hover .product-img img{transform:scale(1.08)}
+  .product-badge{position:absolute;top:14px;left:14px;background:rgba(13,13,13,.85);color:var(--gold);padding:6px 12px;border-radius:999px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(8px)}
+  
+  .product-variant-selector {
+    padding: 12px 22px 0 22px;
+  }
+  .variant-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-  }
-  .social-icon.tiktok { background: #000; }
-  .social-icon.instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-
-  .obsession-quote {
-    font-family: var(--serif);
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    font-style: italic;
-    color: var(--espresso);
-    line-height: 1.3;
-    position: relative;
-    padding-left: 2rem;
-    margin-top: 2rem;
-  }
-  .obsession-quote::before {
-    content: '"';
-    position: absolute;
-    left: 0; top: -0.3rem;
-    font-size: 3rem;
-    color: var(--gold);
-    font-family: var(--serif);
-    line-height: 1;
-  }
-
-  .gallery-mosaic {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 0.75rem;
-  }
-  .mosaic-item {
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    background: var(--blush);
-    aspect-ratio: 1;
-  }
-  .mosaic-item:first-child {
-    grid-row: span 2;
-    aspect-ratio: auto;
-  }
-  .mosaic-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-  }
-  .mosaic-item:hover img { transform: scale(1.06); }
-
-  /* ===== ABOUT ===== */
-  #about { background: var(--offwhite); }
-  .about-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-  .about-img {
-    border-radius: var(--radius);
-    overflow: hidden;
-    aspect-ratio: 4/5;
-    background: var(--nude);
-    position: relative;
-  }
-  .about-img img { width: 100%; height: 100%; object-fit: cover; }
-  .about-img-badge {
-    position: absolute;
-    bottom: 2rem;
-    right: -1.5rem;
-    background: var(--gold);
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: var(--radius-sm);
-    font-family: var(--serif);
-    font-size: 1rem;
-    font-style: italic;
-    box-shadow: var(--card-shadow-hover);
-  }
-  .hours-box {
-    background: var(--espresso);
-    border-radius: var(--radius-sm);
-    padding: 1.5rem;
-    margin-top: 2rem;
-  }
-  .hours-title {
-    font-family: var(--serif);
-    font-size: 0.9rem;
-    color: var(--blush);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    font-style: italic;
-  }
-  .hours-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    color: rgba(232,196,176,0.8);
-    padding: 0.35rem 0;
-    border-bottom: 1px solid rgba(232,196,176,0.1);
-  }
-  .hours-row:last-child { border-bottom: none; }
-  .hours-time { color: var(--blush); font-weight: 500; }
-
-  /* ===== MODALS & DRAWERS SYSTEM ===== */
-  .cart-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(44,26,14,0.5);
-    z-index: 2000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition);
-    backdrop-filter: blur(4px);
-  }
-  .cart-overlay.open {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .cart-drawer {
-    position: fixed;
-    top: 0;
-    right: -440px;
-    width: 100%;
-    max-width: 440px;
-    height: 100vh;
-    background: var(--offwhite);
-    z-index: 2001;
-    display: flex;
-    flex-direction: column;
-    transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
-    box-shadow: -8px 0 40px rgba(44,26,14,0.15);
-  }
-  .cart-drawer.open { right: 0; }
-
-  .cart-header {
-    padding: 1.75rem 1.75rem 1.25rem;
-    border-bottom: 1px solid rgba(176,141,90,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .cart-title {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--espresso);
-    letter-spacing: 0.02em;
-  }
-  .cart-close {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--nude);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    color: var(--espresso);
-    transition: all var(--transition);
-  }
-  .cart-close:hover { background: var(--blush); }
-
-  .cart-items {
-    flex: 1;
-    overflow-y: auto;
-    padding: 1.25rem 1.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .cart-items::-webkit-scrollbar { width: 4px; }
-  .cart-items::-webkit-scrollbar-track { background: transparent; }
-  .cart-items::-webkit-scrollbar-thumb { background: var(--blush); border-radius: 2px; }
-
-  .cart-empty {
-    text-align: center;
-    padding: 4rem 2rem;
-  }
-  .cart-empty-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.5; }
-  .cart-empty p {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-style: italic;
-    color: var(--espresso-light);
-  }
-
-  .cart-item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 1rem;
-    padding: 1rem;
-    background: var(--white);
-    border-radius: var(--radius-sm);
-    position: relative;
-    animation: slideIn 0.3s ease;
-  }
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateX(20px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  .cart-item-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    object-fit: cover;
-    background: var(--nude);
-  }
-  .cart-item-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .cart-item-name {
-    font-family: var(--serif);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--espresso);
-    margin-bottom: 0.2rem;
-  }
-  .cart-item-price {
-    font-size: 0.85rem;
-    color: var(--gold);
+    background-color: var(--bg);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink-2);
     font-weight: 500;
-    margin-bottom: 0.6rem;
-  }
-  .cart-qty {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .qty-btn {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: var(--nude);
-    border: 1px solid rgba(176,141,90,0.3);
-    color: var(--espresso);
-    font-size: 0.9rem;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    transition: all var(--transition);
-  }
-  .qty-btn:hover { background: var(--blush); border-color: var(--gold); }
-  .qty-num {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--espresso);
-    min-width: 20px;
-    text-align: center;
-  }
-  .cart-item-remove {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    background: none;
-    border: none;
-    color: var(--espresso-light);
-    cursor: pointer;
-    font-size: 0.7rem;
-    opacity: 0.5;
-    transition: opacity var(--transition);
-  }
-  .cart-item-remove:hover { opacity: 1; color: #c0392b; }
-
-  .cart-footer {
-    padding: 1.5rem 1.75rem;
-    border-top: 1px solid rgba(176,141,90,0.2);
-  }
-  .cart-totals { margin-bottom: 1.25rem; }
-  .cart-total-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.88rem;
-    color: var(--espresso-light);
-    padding: 0.35rem 0;
-  }
-  .cart-total-row.grand {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    color: var(--espresso);
-    font-weight: 600;
-    padding-top: 0.75rem;
-    border-top: 1px solid rgba(176,141,90,0.2);
-    margin-top: 0.5rem;
-  }
-  .btn-checkout-trigger {
-    width: 100%;
-    background: var(--espresso);
-    color: var(--offwhite);
-    border: none;
-    padding: 16px;
-    border-radius: 50px;
-    font-family: var(--sans);
-    font-size: 0.88rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all var(--transition);
-  }
-  .btn-checkout-trigger:hover {
-    background: var(--gold);
-    transform: translateY(-2px);
-  }
-
-  .whatsapp-checkout {
-    width: 100%;
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 16px;
-    border-radius: 50px;
-    font-family: var(--sans);
-    font-size: 0.88rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all var(--transition);
-  }
-  .whatsapp-checkout:hover {
-    background: #1da851;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(37,211,102,0.35);
-  }
-  .wa-icon { font-size: 1.2rem; }
-
-  /* ===== INTEGRATED LUXURY CHECKOUT DETAILS MODAL ===== */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(44,26,14,0.6);
-    z-index: 3000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    backdrop-filter: blur(6px);
-  }
-  .modal-overlay.open {
-    opacity: 1;
-    pointer-events: all;
-  }
-  .luxury-modal {
-    background: var(--offwhite);
-    border-radius: var(--radius);
-    max-width: 520px;
-    width: 100%;
-    box-shadow: 0 20px 50px rgba(44,26,14,0.25);
-    overflow: hidden;
-    position: relative;
-    transform: scale(0.95);
-    transition: transform var(--transition);
-  }
-  .modal-overlay.open .luxury-modal { transform: scale(1); }
-  
-  .modal-header {
-    background: var(--espresso);
-    color: var(--nude);
-    padding: 1.5rem 2rem;
-    position: relative;
-  }
-  .modal-header h3 {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 300;
-  }
-  .modal-header h3 em { font-style: italic; color: var(--gold-light); }
-  .modal-close-btn {
-    position: absolute;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: var(--nude);
-    font-size: 1.5rem;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity var(--transition);
-  }
-  .modal-close-btn:hover { opacity: 1; }
-  
-  .modal-form { padding: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-  .form-group label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    color: var(--espresso-mid);
-  }
-  .form-control {
-    width: 100%;
-    background: var(--white);
-    border: 1px solid rgba(176,141,90,0.3);
-    padding: 12px 16px;
-    border-radius: var(--radius-sm);
-    font-family: var(--sans);
-    font-size: 0.9rem;
-    color: var(--espresso);
-    transition: all var(--transition);
-  }
-  .form-control:focus {
     outline: none;
+    transition: all 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b6358' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 14px;
+  }
+  .variant-select:focus {
     border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(176,141,90,0.15);
-  }
-  textarea.form-control { resize: none; min-height: 80px; }
-
-  /* ===== FLOATING WHATSAPP ===== */
-  .float-wa {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 1500;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: #25D366;
-    color: white;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    box-shadow: 0 4px 24px rgba(37,211,102,0.4);
-    transition: all var(--transition);
-    animation: floatPulse 3s ease-in-out infinite;
-  }
-  .float-wa:hover {
-    transform: scale(1.12) translateY(-3px);
-    box-shadow: 0 8px 32px rgba(37,211,102,0.5);
-    animation: none;
-  }
-  @keyframes floatPulse {
-    0%,100% { box-shadow: 0 4px 24px rgba(37,211,102,0.4); }
-    50% { box-shadow: 0 4px 40px rgba(37,211,102,0.7); }
-  }
-  .float-wa-tooltip {
-    position: absolute;
-    right: 70px;
-    background: var(--espresso);
-    color: var(--offwhite);
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 8px 14px;
-    border-radius: 8px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition);
-  }
-  .float-wa:hover .float-wa-tooltip { opacity: 1; }
-  .float-wa-tooltip::after {
-    content: '';
-    position: absolute;
-    right: -6px; top: 50%;
-    transform: translateY(-50%);
-    border: 6px solid transparent;
-    border-left-color: var(--espresso);
-    border-right: 0;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(201,164,76,.1);
   }
 
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--espresso);
-    padding: 4rem 5vw 2rem;
-    color: rgba(232,196,176,0.7);
+  .product-body{padding:22px;display:flex;flex-direction:column;flex:1}
+  .product-body h3{font-size:1.15rem;margin-bottom:6px}
+  .product-body .desc{font-size:.85rem;color:var(--muted);margin-bottom:16px;flex:1}
+  .product-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto}
+  .price-tag{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--ink)}
+  .price-tag small{font-size:.7rem;color:var(--muted);font-weight:400;display:block;letter-spacing:.1em;text-transform:uppercase}
+  .add-btn{
+    width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;
+    border:none;cursor:pointer;display:grid;place-items:center;transition:all .3s ease;
   }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
-  }
-  .footer-brand {
-    font-family: var(--serif);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--blush);
-    margin-bottom: 1rem;
-    letter-spacing: 0.03em;
-  }
-  .footer-tagline {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 0.9rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-  .footer-desc { font-size: 0.82rem; line-height: 1.7; max-width: 280px; }
-  .footer-heading {
-    font-family: var(--sans);
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--blush);
-    font-weight: 500;
-    margin-bottom: 1.25rem;
-  }
-  .footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .footer-links a {
-    color: rgba(232,196,176,0.6);
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color var(--transition);
-  }
-  .footer-links a:hover { color: var(--gold); }
-  
-  .footer-hours .hours-item {
-    font-size: 0.82rem;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.3rem 0;
-    border-bottom: 1px solid rgba(232,196,176,0.08);
-  }
-  .footer-hours .hours-item:last-child { border: none; }
-  
-  .footer-bottom {
-    border-top: 1px solid rgba(232,196,176,0.1);
-    padding-top: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.75rem;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .footer-social { display: flex; gap: 1rem; }
-  .footer-social a {
-    color: rgba(232,196,176,0.5);
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    transition: color var(--transition);
-  }
-  .footer-social a:hover { color: var(--gold); }
+  .add-btn:hover{background:var(--gold);color:var(--ink);transform:scale(1.1) rotate(90deg)}
+  .add-btn:active{transform:scale(.85)}
 
-  /* ===== MOBILE NAV ===== */
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: var(--offwhite);
-    z-index: 999;
-    padding: 2rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  /* ENQUIRY + STEPS */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  .card-block{background:#fff;border-radius:var(--radius);padding:40px;box-shadow:var(--shadow-sm)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form-group{margin-bottom:16px}
+  .form-group label{display:block;font-size:.78rem;font-weight:600;margin-bottom:6px;color:var(--ink-2);letter-spacing:.05em}
+  .form-group input,.form-group textarea{
+    width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:10px;
+    font-family:inherit;font-size:.95rem;background:var(--bg);transition:all .2s ease;
   }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    font-family: var(--serif);
-    font-size: 2rem;
-    font-weight: 300;
-    color: var(--espresso);
-    text-decoration: none;
-    font-style: italic;
-    transition: color var(--transition);
+  .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 4px rgba(201,164,76,.12)}
+  .form-group textarea{min-height:110px;resize:vertical}
+  .steps{display:flex;flex-direction:column;gap:24px}
+  .step{display:flex;gap:20px;position:relative}
+  .step:not(:last-child)::after{content:'';position:absolute;left:23px;top:50px;bottom:-24px;width:2px;background:linear-gradient(180deg,var(--gold),transparent)}
+  .step-num{
+    flex-shrink:0;width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,var(--ink),#2a2724);color:var(--gold);
+    display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;
+    box-shadow:0 8px 20px -8px rgba(13,13,13,.4);
   }
-  .mobile-menu a:hover { color: var(--gold); }
-  .mobile-menu-close {
-    position: absolute;
-    top: 2rem; right: 2rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--espresso);
-  }
+  .step-content h4{font-size:1.05rem;margin-bottom:4px}
+  .step-content p{color:var(--muted);font-size:.92rem}
 
-  /* Responsive layout updates */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 4rem 2rem; }
-    .hero-right { min-height: 400px; }
-    .social-grid, .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .hamburger { display: flex; }
-    .nav-links { display: none; }
+  /* FLOATING WA */
+  .wa-float{
+    position:fixed;bottom:28px;right:28px;width:62px;height:62px;border-radius:50%;
+    background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.8rem;
+    box-shadow:0 12px 30px -8px rgba(37,211,102,.6);z-index:90;transition:transform .3s ease;
+  }
+  .wa-float:hover{transform:scale(1.1)}
+  .wa-float::before{
+    content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid #25d366;
+    animation:pulse 2s ease-out infinite;opacity:.6;
+  }
+  @keyframes pulse{0%{transform:scale(.9);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+
+  /* CART PANEL Systems */
+  .overlay{position:fixed;inset:0;background:rgba(13,13,13,.5);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:all .3s ease;z-index:200}
+  .overlay.open{opacity:1;visibility:visible}
+  .cart-panel{
+    position:fixed;top:0;right:0;height:100vh;width:440px;max-width:100%;
+    background:#fff;z-index:251;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1);
+    display:flex;flex-direction:column;box-shadow:-20px 0 60px -20px rgba(13,13,13,.3);
+  }
+  .cart-panel.open{transform:translateX(0)}
+  .cart-head{padding:24px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .cart-head h3{font-size:1.4rem}
+  .cart-close{background:none;border:none;font-size:1.4rem;cursor:pointer;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;transition:background .2s}
+  .cart-close:hover{background:var(--bg-2)}
+  .cart-body{flex:1;overflow-y:auto;padding:20px 28px}
+  .cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .cart-item img{width:74px;height:74px;border-radius:10px;object-fit:cover;flex-shrink:0}
+  .cart-item-info{flex:1;min-width:0}
+  .cart-item-info h4{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;margin-bottom:4px}
+  .cart-item-info .ci-price{color:var(--gold);font-weight:700;font-size:.95rem}
+  .qty{display:inline-flex;align-items:center;gap:6px;margin-top:6px;border:1px solid var(--line);border-radius:999px;padding:4px}
+  .qty button{width:32px;height:32px;border-radius:50%;border:none;background:transparent;cursor:pointer;font-weight:700;display:grid;place-items:center}
+  .qty button:hover{background:var(--bg-2)}
+  .qty span{min-width:20px;text-align:center;font-size:.85rem;font-weight:600}
+  .remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.8rem;align-self:flex-start;padding:4px 8px;border-radius:6px;transition:all .2s}
+  .remove:hover{color:#c33;background:rgba(204,51,51,.08)}
+  .empty{text-align:center;padding:60px 20px;color:var(--muted)}
+  .empty i{font-size:3rem;color:var(--line);margin-bottom:16px;display:block}
+  .cart-foot{padding:24px 28px;border-top:1px solid var(--line);background:var(--bg)}
+  .totals{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+  .totals span{color:var(--muted);font-size:.9rem}
+  .totals strong{font-family:'Playfair Display',serif;font-size:1.6rem}
+  .cart-foot .btn{width:100%;justify-content:center}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .bank-box{background:linear-gradient(135deg,#1a1a1a,#2a2724);color:#fff;padding:22px;border-radius:14px;margin:16px 0}
+  .bank-box h4{color:var(--gold);margin-bottom:12px;font-size:1rem}
+  .bank-box dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:.88rem}
+  .bank-box dt{color:rgba(255,255,255,.5)}
+  .bank-box dd{color:#fff;font-weight:500;text-align:right}
+  .back-link{background:none;border:none;color:var(--muted);font-size:.85rem;cursor:pointer;margin-bottom:14px;display:inline-flex;align-items:center;gap:6px}
+  .back-link:hover{color:var(--ink)}
+
+  /* NOTIFICATION TOAST */
+  .toast{
+    position:fixed;bottom:32px;left:32px;
+    background:var(--ink);color:#fff;padding:14px 24px;
+    border-radius:12px;box-shadow:var(--shadow);
+    display:flex;align-items:center;gap:12px;z-index:300;
+    transform:translateY(100px);opacity:0;
+    transition:transform .4s cubic-bezier(.2,.7,.2,1),opacity .4s ease;
+    font-size:.92rem;font-weight:500;
+  }
+  .toast.show{transform:translateY(0);opacity:1}
+  .toast i{color:var(--gold);font-size:1.1rem}
+
+  /* FOOTER */
+  footer{background:#0d0d0d;color:#bbb;padding:70px 0 30px;margin-top:60px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
+  footer h5{font-family:'Playfair Display',serif;color:#fff;font-size:1.1rem;margin-bottom:16px}
+  footer p,footer a{font-size:.9rem;color:#999;line-height:1.8}
+  footer a:hover{color:var(--gold)}
+  .socials{display:flex;gap:12px;margin-top:14px}
+  .socials a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);display:grid;place-items:center;transition:all .3s}
+  .socials a:hover{background:var(--gold);color:var(--ink);transform:translateY(-2px)}
+  .copy{text-align:center;padding-top:30px;border-top:1px solid rgba(255,255,255,.08);font-size:.82rem;color:#666}
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .product-grid{grid-template-columns:repeat(3,1fr)}
+    .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:960px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:18px;border-top:1px solid var(--line);z-index:99}
+    .nav-links.open{display:flex}
+    .menu-toggle{display:block}
+    .hero{padding:120px 0 60px;}
+    .hero-grid{max-width:100%;}
+    .about-grid{grid-template-columns:1fr;gap:40px}
+    .product-grid{grid-template-columns:repeat(2,1fr)}
+    .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    .two-col{grid-template-columns:1fr;gap:40px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+    section{padding:70px 0}
+  }
+  @media(max-width:560px){
+    .product-grid{grid-template-columns:1fr}
+    .gallery-grid{grid-template-columns:1fr}
+    .gallery-item.tall{aspect-ratio:1/1}
+    .about-features{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .form-row{grid-template-columns:1fr}
+    .hero-stats{gap:20px;flex-wrap:wrap}
+    .card-block{padding:28px 22px}
+    .cart-panel{width:100%; max-width:100%;}
+    .toast{left:24px;right:24px;bottom:24px;justify-content:center;text-align:center}
   }
 </style>
 </head>
 <body>
 
-  <nav id="mainNav">
-    <a href="#" class="nav-logo">
-      REFILWE'S
-      <span>Beauty Parlour</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#shop">Collection</a></li>
-      <li><a href="#social">Obsession</a></li>
-      <li><a href="#about">The Studio</a></li>
-    </ul>
-    <button class="cart-btn" onclick="toggleCart(true)">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-      Cart
-      <span class="cart-badge" id="cartBadge">0</span>
-    </button>
-    <button class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-menu-close" id="mobileClose">&times;</button>
-    <a href="#shop" onclick="closeMenu()">Collection</a>
-    <a href="#social" onclick="closeMenu()">Obsession</a>
-    <a href="#about" onclick="closeMenu()">The Studio</a>
-  </div>
-
-  <div class="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Premium Wigs &amp; Hair Extensions</p>
-      <h1 class="hero-title">Crown yourself in <em>uncompromised</em> luxury.</h1>
-      <p class="hero-desc">Meticulously curated virgin hair pieces crafted to empower, elevate, and enhance your natural aesthetic grace.</p>
-      <div class="hero-ctas">
-        <a href="#shop" class="btn-primary" style="text-decoration:none;">Explore Collection</a>
-      </div>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo"><span class="logo-mark">R</span> Refilwes <span style="color:var(--gold);margin-left:4px">Beauty</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#shop">Wigs</a>
+      <a href="#gallery">Lookbook</a>
+      <a href="#order">How To Order</a>
+      <a href="#contact">Contact</a>
     </div>
-    <div class="hero-right">
-      <div class="carousel" id="heroCarousel">
-        <div class="carousel-slide active">
-          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1200" alt="Luxury Wig Styling">
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+      <button class="cart-btn" id="cartOpen" aria-label="Open cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow">Premium Hair · Est. Eswatini</span>
+        <h1>Luxury Bodywave & <em>Premium</em> Wigs</h1>
+        <p>Enhance your natural beauty with our meticulously crafted extensions — 100% human hair, hand-tied lace, and bespoke styling for the modern queen.</p>
+        <div class="hero-cta">
+          <a href="#shop" class="btn btn-gold">Browse Collection <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#about" class="btn btn-ghost">Our Story</a>
         </div>
-        <div class="carousel-slide">
-          <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=1200" alt="Premium Hair Extensions">
+        <div class="hero-stats">
+          <div><strong>500+</strong><span>Happy Clients</span></div>
+          <div><strong>100%</strong><span>Human Hair</span></div>
+          <div><strong>09:00–17:00</strong><span>Mon – Sun</span></div>
         </div>
-        <div class="carousel-text">
-          
-        </div>
-        <div class="carousel-dots" id="carouselDots"></div>
       </div>
     </div>
   </div>
+</section>
 
-  <section id="shop">
-    <p class="section-label">Signature Creations</p>
-    <h2 class="section-title">The <em>Premium</em> Gallery</h2>
-    <p class="section-sub">Select an exquisite masterpiece tailored precisely to your standards or consult for a bespoke layout.</p>
-    
-    <div class="products-grid" id="productsContainer">
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-text">
+      <span class="eyebrow">Crafting Excellence</span>
+      <h2>Designed for Queens Who Demand Perfection</h2>
+      <p>At Refilwes Beauty Parlour, we believe your hair is your crown. We source only the finest 100% human hair extensions and premium crowns, processing each piece to ensure complete cuticle alignment, zero shedding, and unmatched longevity.</p>
+      <p>Whether you're looking for a breathtaking signature Bodywave or a sleek, classic daily look, our bespoke customization matching promises an undetectable melt and effortless confidence.</p>
+      <div class="about-features">
+        <div class="about-feat-item">
+          <i class="fa-solid fa-gem"></i>
+          <h4>Pure Virgin Quality</h4>
+          <p>Uncompromised donor hair capable of bleaching and heat re-styling.</p>
+        </div>
+        <div class="about-feat-item">
+          <i class="fa-solid fa-sparkles"></i>
+          <h4>HD Lace Melts</h4>
+          <p>Ultra-thin transparent lace that blends seamlessly with all complexions.</p>
+        </div>
       </div>
-  </section>
+    </div>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1595959183075-c1d0a17b9997?w=800&q=80" alt="Refilwes Luxury Studio Model">
+    </div>
+  </div>
+</section>
 
+<section class="products" id="shop">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="justify-content:center">The Collection</span>
+      <h2>Shop All Wigs</h2>
+      <p>Each wig is hand-selected and quality-tested. Pick your style option below and add to your cart.</p>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="justify-content:center">The lookbook</span>
+      <h2>Real Clients, Real Luxury</h2>
+      <p>Take a look at how our custom lace frontals, bundles, and custom closures translate into high-end beauty transformations.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall">
+        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80" alt="Lookbook volume definition">
+        <div class="gallery-overlay"><span>Luxury Bundles Install</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Styling process close up">
+        <div class="gallery-overlay"><span>Undetectable Lace Melt</span></div>
+      </div>
+      <div class="gallery-item tall">
+        <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&q=80" alt="Premium blonde installment">
+        <div class="gallery-overlay"><span>Custom Blonde Customization</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" alt="Silk press treatment finish">
+        <div class="gallery-overlay"><span>Signature Silk Press Finish</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1599751449128-eb7249c3d6b1?w=600&q=80" alt="Water curls look">
+        <div class="gallery-overlay"><span>Pre-Plucked Water Curls</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&q=80" alt="Frontal hairline macro view">
+        <div class="gallery-overlay"><span>Flawless Frontal Hairline</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="justify-content:center">Get Started</span>
+      <h2>Enquire & Order With Ease</h2>
+      <p>Have a question? Drop us a line. Ready to order? Follow the four simple steps.</p>
+    </div>
+    <div class="two-col">
+      <div class="card-block" id="contact">
+        <h3 style="font-size:1.5rem;margin-bottom:6px">Send An Enquiry</h3>
+        <p style="color:var(--muted);font-size:.92rem;margin-bottom:24px">We respond within an hour during business hours.</p>
+        <form id="enquiryForm">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input required name="fname" placeholder="Refilwe"></div>
+            <div class="form-group"><label>Surname</label><input required name="lname" placeholder="Makwala"></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input required type="email" name="email" placeholder="you@email.com"></div>
+          <div class="form-group"><label>WhatsApp Number</label><input required name="phone" placeholder="+268 xxxx xxxx"></div>
+          <div class="form-group"><label>Message</label><textarea required name="msg" placeholder="Tell us what you're looking for..."></textarea></div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center" type="submit">Submit Enquiry <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+      <div>
+        <h3 style="font-size:1.5rem;margin-bottom:6px">How To Order</h3>
+        <p style="color:var(--muted);font-size:.92rem;margin-bottom:30px">Four steps. Total transparency.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Browse the catalogue</h4><p>Explore our luxury collection and add favourites to your cart.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Complete delivery details</h4><p>Fill in your name and delivery/collection address in the checkout window.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Make payment</h4><p>Note the displayed banking details and process your bank transfer (EFT).</p></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><h4>Confirm via WhatsApp</h4><p>Click 'Order via WhatsApp' to send your order details and attach your Proof of Payment (POP).</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h5>Refilwes Beauty Parlour</h5>
+        <p>Luxury bodywave and premium wigs, crafted to enhance your natural beauty. Trusted by hundreds of clients across the region.</p>
+        <div class="socials">
+          <a href="https://www.tiktok.com/@refilwesbeauty" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://wa.me/268648935370" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <p><a href="#shop">All Wigs</a><br><a href="#shop">Bodywave</a><br><a href="#shop">Closures</a><br><a href="#shop">Frontals</a></p>
+      </div>
+      <div>
+        <h5>Hours</h5>
+        <p>Monday – Sunday<br>09:00 – 17:00<br>WhatsApp +268 64 893 5370</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <p><a href="#order">How to Order</a><br><a href="#contact">Enquiry</a><br><a href="https://www.tiktok.com/@refilwesbeauty" target="_blank">@refilwesbeauty</a></p>
+      </div>
+    </div>
+    <div class="copy">© <span id="yr"></span> Refilwes Beauty Parlour. All rights reserved.</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/268648935370" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<div class="overlay" id="overlay"></div>
+<aside class="cart-panel" id="cartPanel">
+  <div class="cart-head">
+    <h3 id="cartTitle">Your Cart</h3>
+    <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-foot" id="cartFoot"></div>
+</aside>
+
+<script>
+const PRODUCTS = [
+  {
+    id: 1,
+    title: "Full Frontal Straight Hair",
+    badge: "Bestseller",
+    img: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&q=80",
+    variants: [
+      { name: '8 inch', price: 700 },
+      { name: '10 inch', price: 870 },
+      { name: '12 inch', price: 1095 },
+      { name: '24 inch', price: 2500 },
+      { name: '30 inch', price: 4620 }
+    ]
+  },
+  {
+    id: 2,
+    title: "Full Frontal Water Curls",
+    badge: "Hot",
+    img: "https://images.unsplash.com/photo-1595944531057-9b35afd33dd7?w=600&q=80",
+    variants: [
+      { name: '10 inch', price: 1170 },
+      { name: '18 inch', price: 1635 },
+      { name: '20 inch', price: 1995 }
+    ]
+  },
+  {
+    id: 3,
+    title: "Double Drawn Peruvian Hair",
+    badge: "Premium",
+    img: "https://images.unsplash.com/photo-1599751449128-eb7249c3d6b1?w=600&q=80",
+    variants: [
+      { name: '10 inch', price: 1500 },
+      { name: '12 inch', price: 1785 }
+    ]
+  },
+  {
+    id: 4,
+    title: "Bundles x3 Deals",
+    badge: "Value Combo",
+    img: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80",
+    variants: [
+      { name: '3x 22 inch', price: 1890 },
+      { name: '3x 32 inch', price: 4995 }
+    ]
+  },
+  {
+    id: 5,
+    title: "Pixie Cuts Collection",
+    badge: "Classic",
+    img: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
+    variants: [
+      { name: 'Grey Style', price: 550 },
+      { name: 'Brown Style', price: 550 },
+      { name: 'Maroon Style', price: 550 }
+    ]
+  },
+  {
+    id: 6,
+    title: "Chocolate Straight Hair",
+    badge: "Trending",
+    img: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80",
+    variants: [
+      { name: '20 inch', price: 3425 }
+    ]
+  },
+  {
+    id: 7,
+    title: "Bob Cut Special",
+    badge: "Sleek",
+    img: "https://images.unsplash.com/photo-1595959183075-c1d0a17b9997?w=800&q=80",
+    variants: [
+      { name: '8 inch', price: 2250 }
+    ]
+  },
+  {
+    id: 8,
+    title: "Blonde Hair Luxury",
+    badge: "Exotic",
+    img: "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&q=80",
+    variants: [
+      { name: '10 inch', price: 1290 }
+    ]
+  },
+  {
+    id: 9,
+    title: "Fringe Wig Classic",
+    badge: "New Arrival",
+    img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80",
+    variants: [
+      { name: '10 inch', price: 950 }
+    ]
+  }
+];
+
+const WA_NUMBER = "268648935370";
+const BANK = {Bank:"Standard Bank Eswatini",Account:"Refilwes Beauty Parlour",Number:"9110 002 345 67",Branch:"Mbabane (663164)",Ref:"Your Name + Order"};
+
+let cart = [];
+let stage = "cart"; 
+let customer = {fname:"",lname:"",address:""};
+
+const grid = document.getElementById('productGrid');
+
+function renderProductGrid() {
+  grid.innerHTML = PRODUCTS.map(p => {
+    const optionsHTML = p.variants.map((v, idx) => 
+      `<option value="${idx}">${v.name} — R ${v.price.toLocaleString()}</option>`
+    ).join('');
+
+    return `
+      <article class="product" id="product-card-${p.id}">
+        <div class="product-img">
+          ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+          <img src="${p.img}" alt="${p.title}" loading="lazy">
+        </div>
+        
+        <div class="product-variant-selector">
+          <select class="variant-select" onchange="handleVariantChange(${p.id}, this.value)">
+            ${optionsHTML}
+          </select>
+        </div>
+
+        <div class="product-body">
+          <h3>${p.title}</h3>
+          <p class="desc" id="variant-desc-${p.id}">${p.variants[0].name}</p>
+          <div class="product-foot">
+            <div class="price-tag"><span id="price-display-${p.id}">R ${p.variants[0].price.toLocaleString()}</span><small>ZAR</small></div>
+            <button class="add-btn" data-id="${p.id}" aria-label="Add to cart"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+function handleVariantChange(productId, variantIndex) {
+  const product = PRODUCTS.find(p => p.id === productId);
+  const selectedVariant = product.variants[variantIndex];
   
+  document.getElementById(`price-display-${productId}`).textContent = `R ${selectedVariant.price.toLocaleString()}`;
+  document.getElementById(`variant-desc-${productId}`).textContent = selectedVariant.name;
+}
 
-  <section id="social">
-    <div class="social-grid">
-      <div>
-        <p class="section-label">Shared Realities</p>
-        <h2 class="section-title">The Studio <em>Obsession</em></h2>
-        <p class="section-sub">Witness how our patrons express luxury across digital channels daily. Tag your piece to join our modern aesthetic mosaic.</p>
-        <p class="obsession-quote">"The HD Lace blend literally vanished into my skin. I have never encountered virgin hair that responds this seamlessly to heat styling."</p>
-        
-        <div class="social-links">
-          <a href="#" class="social-link">
-            <span class="social-icon tiktok">🎵</span>
-            Follow our transformations on TikTok
-          </a>
-          <a href="#" class="social-link">
-            <span class="social-icon instagram">📸</span>
-            Behind the scenes on Instagram
-          </a>
-        </div>
-      </div>
-      <div class="gallery-mosaic">
-        <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1605497746444-ac96152a488c?q=80&w=600" alt="Client Spotlight"></div>
-        <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1595959183075-c1d945133630?q=80&w=600" alt="Lace Detail Close Up"></div>
-        <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=80&w=600" alt="Wig Install Presentation"></div>
-      </div>
-    </div>
-  </section>
+grid.addEventListener('click', e => {
+  const b = e.target.closest('.add-btn');
+  if(!b) return;
+  
+  const id = +b.dataset.id;
+  const cardElement = document.getElementById(`product-card-${id}`);
+  const selectElement = cardElement.querySelector('.variant-select');
+  const selectedIndex = parseInt(selectElement.value, 10);
+  
+  addToCart(id, selectedIndex);
+  
+  const origIcon = b.innerHTML;
+  b.innerHTML = '<i class="fa-solid fa-check"></i>';
+  b.style.background = 'var(--gold)';
+  b.style.color = 'var(--ink)';
+  b.style.transform = 'scale(1.1)';
+  
+  setTimeout(() => {
+    b.innerHTML = origIcon;
+    b.style.background = '';
+    b.style.color = '';
+    b.style.transform = '';
+  }, 2000);
+});
 
-  <section id="about">
-    <div class="about-inner">
-      <div class="about-img">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800" alt="Refilwe Salon Space">
-        
-      </div>
-      <div>
-        <p class="section-label">Aesthetic Sanctum</p>
-        <h2 class="section-title">The Hair <em>Apothecary</em></h2>
-        <p class="section-sub">Refilwe’s Beauty Parlour offers an intimate, highly private salon experience dedicated strictly to standard wig styling, revitalization treatment layouts, and luxury attachment installations.</p>
-        
-        <div class="hours-box">
-          <h4 class="hours-title">Studio Consultations</h4>
-          <div class="hours-row"><span>Monday — Friday</span><span class="hours-time">09:00 - 18:00</span></div>
-          <div class="hours-row"><span>Saturday</span><span class="hours-time">09:00 - 15:00</span></div>
-          <div class="hours-row"><span>Sundays &amp; Holidays</span><span class="hours-time">Closed</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <h3 class="footer-brand">REFILWE'S</h3>
-        <p class="footer-tagline">Crown yourself in uncompromised luxury.</p>
-        <p class="footer-desc">Crafting premium, luxury transformations through unmatched raw grade virgin extensions and flawless high definition lace application.</p>
-      </div>
-      <div>
-        <h4 class="footer-heading">Navigation</h4>
-        <ul class="footer-links">
-          <li><a href="#shop">Collection</a></li>
-          <li><a href="#social">Obsession</a></li>
-          <li><a href="#about">The Studio</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-heading">Secure Communication</h4>
-        <p class="footer-desc" style="margin-bottom:1rem;">All requests, fittings, and sales route safely to our WhatsApp dispatch office for high-tier handling.</p>
-        <p style="font-size:0.8rem; color:var(--gold);">📍 Sandton, South Africa</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Refilwe's Beauty Parlour. Curated Elegance Always.</p>
-      <div class="footer-social">
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">WhatsApp</a>
-      </div>
-    </div>
-  </footer>
-
-  <div class="modal-overlay" id="checkoutModalOverlay" onclick="closeCheckoutModal(event)">
-    <div class="luxury-modal">
-      <div class="modal-header">
-        <h3>Checkout <em>Details</em></h3>
-        <button class="modal-close-btn" onclick="toggleCheckoutModal(false)">&times;</button>
-      </div>
-      <form class="modal-form" id="checkoutDetailsForm" onsubmit="handleCheckoutSubmit(event)">
-        <div class="form-group">
-          <label for="clientName">Full Name &amp; Surname</label>
-          <input type="text" id="clientName" class="form-control" placeholder="e.g. Lerato Khumalo" required>
-        </div>
-        <div class="form-group">
-          <label for="clientEmail">Email Address</label>
-          <input type="email" id="clientEmail" class="form-control" placeholder="e.g. lerato@domain.co.za" required>
-        </div>
-        <div class="form-group">
-          <label for="shippingAddress">Shipping Address</label>
-          <textarea id="shippingAddress" class="form-control" placeholder="Please enter your complete physical address for courier delivery..." required></textarea>
-        </div>
-        <button type="submit" class="whatsapp-checkout" style="margin-top:0.5rem;">
-          <span class="wa-icon">💬</span> Complete Order via WhatsApp
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <div class="cart-overlay" id="cartOverlay" onclick="closeCartFromOverlay(event)">
-    <div class="cart-drawer" id="cartDrawer">
-      <div class="cart-header">
-        <h3 class="cart-title">Your Selection</h3>
-        <button class="cart-close" onclick="toggleCart(false)">&times;</button>
-      </div>
-      
-      <div class="cart-items" id="cartItemsWrap">
-        </div>
-
-      <div class="cart-footer" id="cartFooterSection">
-        <div class="cart-totals">
-          <div class="cart-total-row">
-            <span>Items Selected</span>
-            <span id="cartCountLabel">0</span>
-          </div>
-          <div class="cart-total-row grand">
-            <span>Estimated Total</span>
-            <span id="cartTotalLabel">R 0.00</span>
-          </div>
-        </div>
-        <button class="btn-checkout-trigger" onclick="triggerCheckoutFlow()">
-          <span class="wa-icon">🔒</span> Secure Checkout to WhatsApp
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <button class="float-wa" onclick="toggleCart(true)">
-    💬
-    <span class="float-wa-tooltip">View Cart &amp; Checkout</span>
-  </button>
-
-  <script>
-    // Dataset Collection
-    const PRODUCTS_DATA = [
-      { id: 1, name: "The Cleopatra Bob", price: 3450, category: "Signature Bob Units", description: "Flawless bluntcut 10-inch raw straight unit paired with pre-plucked unnoticeable HD lace base matrix.", tag: "Best Seller", img: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=500" },
-      { id: 2, name: "Aura Deep Wave", price: 6800, category: "Exotic Textures", description: "Premium 24-inch rich deep wave hair. Boundless bounce volume, meticulously pre-bleached knots.", tag: "New", img: "https://images.unsplash.com/photo-1605497746444-ac96152a488c?q=80&w=500" },
-      { id: 3, name: "Sandton Straight Seamless", price: 5900, category: "Silky Straight", description: "Ultra luxurious bone straight layout. high luminosity reflectivity index across a 20-inch density profile.", tag: null, img: "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=80&w=500" },
-      { id: 4, name: "Elegance Closure Piece", price: 4200, category: "Essential Frontals", description: "A flexible and durable 5x5 structural lace closure masterpiece ideal for secure natural-looking parting daily.", tag: "Premium Grade", img: "https://images.unsplash.com/photo-1595959183075-c1d945133630?q=80&w=500" }
-    ];
-
-    // Core Architecture State Tracking Engine
-    let userCart = [];
-    const CONTACT_WHATSAPP = "27615072483"; // Production-ready router link endpoint
-
-    // Init Logic on Content Loaded
-    document.addEventListener("DOMContentLoaded", () => {
-      renderProductsGrid();
-      initHeroCarousel();
-      observeScrollAnimations();
+function addToCart(id, variantIndex) {
+  const p = PRODUCTS.find(x => x.id === id);
+  const variant = p.variants[variantIndex];
+  const cartItemId = `${id}-${variantIndex}`;
+  const existingItem = cart.find(x => x.cartItemId === cartItemId);
+  
+  if (existingItem) {
+    existingItem.qty++;
+  } else {
+    cart.push({
+      cartItemId: cartItemId,
+      id: p.id,
+      title: `${p.title} (${variant.name})`,
+      price: variant.price,
+      img: p.img,
+      qty: 1
     });
+  }
+  updateBadge(true);
+  renderCart();
+  showToast(`"${p.title} (${variant.name})" added to cart!`);
+}
 
-    // Product Card Grid Builders
-    function renderProductsGrid() {
-      const target = document.getElementById("productsContainer");
-      if (!target) return;
-      
-      target.innerHTML = PRODUCTS_DATA.map(p => `
-        <div class="product-card reveal">
-          <div class="product-img-wrap">
-            ${p.tag ? `<span class="product-tag ${p.tag.toLowerCase() === 'new' ? 'new' : ''}">${p.tag}</span>` : ''}
-            <button class="product-wishlist" onclick="toggleWishlistState(this)" aria-label="Save item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            </button>
-            <img src="${p.img}" alt="${p.name}">
-          </div>
-          <div class="product-body">
-            <p class="product-category">${p.category}</p>
-            <h3 class="product-name">${p.name}</h3>
-            <p class="product-desc">${p.description}</p>
-            <div class="product-footer">
-              <div class="product-price"><span class="currency">R</span> ${p.price.toLocaleString('en-ZA', {minimumFractionDigits:2})}</div>
-              <button class="add-cart-btn" onclick="addToCartEngine(${p.id})">Add to Bag</button>
-            </div>
+function showToast(msg) {
+  let t = document.getElementById('toast');
+  if(!t) {
+    t = document.createElement('div');
+    t.id = 'toast';
+    t.className = 'toast';
+    document.body.appendChild(t);
+  }
+  t.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${msg}</span>`;
+  t.classList.add('show');
+  clearTimeout(t.timeout);
+  t.timeout = setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function updateBadge(bump) {
+  const b = document.getElementById('cartBadge');
+  const n = cart.reduce((s, i) => s + i.qty, 0);
+  b.textContent = n;
+  b.classList.toggle('show', n > 0);
+  if(bump) { b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); }
+}
+
+function changeQty(cartItemId, d) {
+  const it = cart.find(x => x.cartItemId === cartItemId);
+  if(!it) return;
+  it.qty += d;
+  if(it.qty <= 0) cart = cart.filter(x => x.cartItemId !== cartItemId);
+  updateBadge(); renderCart();
+}
+
+function removeItem(cartItemId) {
+  cart = cart.filter(x => x.cartItemId !== cartItemId);
+  updateBadge(); renderCart();
+}
+
+function cartTotal() { return cart.reduce((s, i) => s + i.price * i.qty, 0); }
+
+const cartBody = document.getElementById('cartBody');
+const cartFoot = document.getElementById('cartFoot');
+const cartTitle = document.getElementById('cartTitle');
+
+function renderCart() {
+  if(cart.length === 0) {
+    stage = "cart";
+    cartTitle.textContent = "Your Cart";
+    cartBody.innerHTML = `<div class="empty"><i class="fa-solid fa-bag-shopping"></i><p>Your cart is empty.</p></div>`;
+    cartFoot.innerHTML = "";
+    return;
+  }
+  if(stage === "cart") {
+    cartTitle.textContent = "Your Cart";
+    cartBody.innerHTML = cart.map(i => `
+      <div class="cart-item">
+        <img src="${i.img}" alt="">
+        <div class="cart-item-info">
+          <h4>${i.title}</h4>
+          <div class="ci-price">R ${(i.price * i.qty).toLocaleString()}</div>
+          <div class="qty">
+            <button onclick="changeQty('${i.cartItemId}', -1)">−</button>
+            <span>${i.qty}</span>
+            <button onclick="changeQty('${i.cartItemId}', 1)">+</button>
           </div>
         </div>
-      `).join('');
-    }
+        <button class="remove" onclick="removeItem('${i.cartItemId}')"><i class="fa-solid fa-trash"></i></button>
+      </div>`).join('');
+    cartFoot.innerHTML = `
+      <div class="totals"><span>Total</span><strong>R ${cartTotal().toLocaleString()}</strong></div>
+      <button class="btn btn-primary" onclick="goStage('details')">Continue to Checkout Details <i class="fa-solid fa-arrow-right"></i></button>`;
+  } else if(stage === "details") {
+    cartTitle.textContent = "Delivery Details";
+    cartBody.innerHTML = `
+      <button class="back-link" onclick="goStage('cart')"><i class="fa-solid fa-arrow-left"></i> Back to cart</button>
+      <div class="form-group"><label>First Name *</label><input id="cf" value="${customer.fname}" placeholder="Refilwe"></div>
+      <div class="form-group"><label>Surname *</label><input id="cl" value="${customer.lname}" placeholder="Makwala"></div>
+      <div class="form-group"><label>Delivery / Collection Address *</label><textarea id="ca" placeholder="Full delivery address or 'Collection in Mbabane'">${customer.address}</textarea></div>`;
+    cartFoot.innerHTML = `
+      <div class="totals"><span>Total</span><strong>R ${cartTotal().toLocaleString()}</strong></div>
+      <button class="btn btn-primary" onclick="saveDetails()">View Banking Details <i class="fa-solid fa-arrow-right"></i></button>`;
+  } else if(stage === "bank") {
+    cartTitle.textContent = "Payment & Confirm";
+    cartBody.innerHTML = `
+      <button class="back-link" onclick="goStage('details')"><i class="fa-solid fa-arrow-left"></i> Edit details</button>
+      <p style="font-size:.9rem;color:var(--muted);margin-bottom:12px">Please transfer the total below into the account, then confirm via WhatsApp with your Proof of Payment.</p>
+      <div class="bank-box">
+        <h4><i class="fa-solid fa-building-columns"></i> Banking Details</h4>
+        <dl>${Object.entries(BANK).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>
+      </div>`;
+    cartFoot.innerHTML = `
+      <div class="totals"><span>Amount Due</span><strong>R ${cartTotal().toLocaleString()}</strong></div>
+      <button class="btn btn-gold" onclick="sendWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Confirm & Order via WhatsApp</button>`;
+  }
+}
 
-    // Modern Wishlist Interaction Mapping
-    function toggleWishlistState(btn) {
-      btn.classList.toggle("liked");
-      const sv = btn.querySelector("svg");
-      if (btn.classList.contains("liked")) {
-        sv.setAttribute("fill", "#c0392b");
-        sv.style.stroke = "#c0392b";
-      } else {
-        sv.setAttribute("fill", "none");
-        sv.style.stroke = "currentColor";
-      }
-    }
+function goStage(s) { stage = s; renderCart(); }
 
-    // Dynamic Add-To-Bag Systems
-    function addToCartEngine(id) {
-      const match = PRODUCTS_DATA.find(x => x.id === id);
-      if (!match) return;
+function saveDetails() {
+  const f = document.getElementById('cf').value.trim();
+  const l = document.getElementById('cl').value.trim();
+  const a = document.getElementById('ca').value.trim();
+  if(!f || !l || !a) { alert("Please complete all fields to continue."); return; }
+  customer = { fname: f, lname: l, address: a };
+  goStage('bank');
+}
 
-      const structuralCheck = userCart.find(item => item.product.id === id);
-      if (structuralCheck) {
-        structuralCheck.qty += 1;
-      } else {
-        userCart.push({ product: match, qty: 1 });
-      }
+function sendWhatsApp() {
+  const items = cart.map(i => `${i.title} x ${i.qty}`).join(", ");
+  const msg = `Hi Refilwes Beauty Parlour! I'd like to place an order.\n\nCustomer: ${customer.fname} ${customer.lname}\nAddress: ${customer.address}\nItems: ${items}\nTotal: R ${cartTotal().toLocaleString()}\n\nI am sending through my Proof of Payment next.`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+}
 
-      evaluateCartCalculations();
-      triggerCartBadgeShake();
-      toggleCart(true); 
-    }
+const overlay = document.getElementById('overlay');
+const panel = document.getElementById('cartPanel');
+function openCart() { panel.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeCart() { panel.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('cartOpen').onclick = () => { renderCart(); openCart(); };
+document.getElementById('cartClose').onclick = closeCart;
+overlay.onclick = closeCart;
 
-    // Cart Calculations Engine
-    function evaluateCartCalculations() {
-      const badge = document.getElementById("cartBadge");
-      const labelCount = document.getElementById("cartCountLabel");
-      const labelTotal = document.getElementById("cartTotalLabel");
-      const wrap = document.getElementById("cartItemsWrap");
-      const footer = document.getElementById("cartFooterSection");
+window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20));
 
-      let combinedCount = 0;
-      let financialGrandSum = 0;
+const mt = document.getElementById('menuToggle'), nl = document.getElementById('navLinks');
+mt.onclick = () => nl.classList.toggle('open');
+nl.querySelectorAll('a').forEach(a => a.onclick = () => nl.classList.remove('open'));
 
-      userCart.forEach(item => {
-        combinedCount += item.qty;
-        financialGrandSum += (item.product.price * item.qty);
-      });
+document.getElementById('enquiryForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const msg = `Hi Refilwes Beauty Parlour! New enquiry:\n\nName: ${fd.get('fname')} ${fd.get('lname')}\nEmail: ${fd.get('email')}\nWhatsApp: ${fd.get('phone')}\n\nMessage: ${fd.get('msg')}`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+  e.target.reset();
+});
 
-      badge.textContent = combinedCount;
-      labelCount.textContent = combinedCount;
-      labelTotal.textContent = `R ${financialGrandSum.toLocaleString('en-ZA', {minimumFractionDigits:2})}`;
-
-      if (userCart.length === 0) {
-        wrap.innerHTML = `
-          <div class="cart-empty">
-            <div class="cart-empty-icon">🛍️</div>
-            <p>Your luxury cart is currently unoccupied.</p>
-          </div>
-        `;
-        footer.style.pointerEvents = "none";
-        footer.style.opacity = "0.5";
-      } else {
-        footer.style.pointerEvents = "all";
-        footer.style.opacity = "1";
-        wrap.innerHTML = userCart.map(item => `
-          <div class="cart-item">
-            <img src="${item.product.img}" alt="${item.product.name}" class="cart-item-img">
-            <div class="cart-item-details">
-              <h4 class="cart-item-name">${item.product.name}</h4>
-              <div class="cart-item-price">R ${item.product.price.toLocaleString('en-ZA')}</div>
-              <div class="cart-qty">
-                <button class="qty-btn" onclick="updateQtyEngine(${item.product.id}, -1)">-</button>
-                <span class="qty-num">${item.qty}</span>
-                <button class="qty-btn" onclick="updateQtyEngine(${item.product.id}, 1)">+</button>
-              </div>
-            </div>
-            <button class="cart-item-remove" onclick="removeCartItemEngine(${item.product.id})">&times;</button>
-          </div>
-        `).join('');
-      }
-    }
-
-    function updateQtyEngine(id, variance) {
-      const index = userCart.findIndex(x => x.product.id === id);
-      if (index === -1) return;
-
-      userCart[index].qty += variance;
-      if (userCart[index].qty <= 0) {
-        userCart.splice(index, 1);
-      }
-      evaluateCartCalculations();
-    }
-
-    function removeCartItemEngine(id) {
-      userCart = userCart.filter(x => x.product.id !== id);
-      evaluateCartCalculations();
-    }
-
-    function triggerCartBadgeShake() {
-      const badge = document.getElementById("cartBadge");
-      badge.classList.add("shake");
-      setTimeout(() => badge.classList.remove("shake"), 400);
-    }
-
-    // Modal Drawer Triggers
-    function toggleCart(shouldOpen) {
-      const overlay = document.getElementById("cartOverlay");
-      const drawer = document.getElementById("cartDrawer");
-      if (shouldOpen) {
-        overlay.classList.add("open");
-        drawer.classList.add("open");
-      } else {
-        overlay.classList.remove("open");
-        drawer.classList.remove("open");
-      }
-    }
-
-    function closeCartFromOverlay(e) {
-      if (e.target.id === "cartOverlay") toggleCart(false);
-    }
-
-    // ===== INTERACTIVE CHECKOUT FLOW =====
-    function triggerCheckoutFlow() {
-      if (userCart.length === 0) return;
-      toggleCart(false); // Close cart drawer
-      toggleCheckoutModal(true); // Open details capture modal
-    }
-
-    function toggleCheckoutModal(shouldOpen) {
-      const overlay = document.getElementById("checkoutModalOverlay");
-      if (shouldOpen) {
-        overlay.classList.add("open");
-      } else {
-        overlay.classList.remove("open");
-        document.getElementById("checkoutDetailsForm").reset();
-      }
-    }
-
-    function closeCheckoutModal(e) {
-      if (e.target.id === "checkoutModalOverlay") toggleCheckoutModal(false);
-    }
-
-    // ===== UNIFIED SECURE WHATSAPP ROUTER =====
-    function handleCheckoutSubmit(e) {
-      e.preventDefault();
-
-      const name = document.getElementById("clientName").value.trim();
-      const email = document.getElementById("clientEmail").value.trim();
-      const shipping = document.getElementById("shippingAddress").value.trim();
-
-      let subtotalSum = 0;
-      const messageBlocks = [
-        "⚜️ REFILWE'S BEAUTY PARLOUR — NEW PURCHASE REQUEST ⚜️",
-        "==========================================",
-        `👤 Client Name     : ${name}`,
-        `📧 Email Address   : ${email}`,
-        `📍 Shipping Address: ${shipping}`,
-        "==========================================",
-        "📦 SELECTED ITEMS:"
-      ];
-
-      userCart.forEach((item, index) => {
-        const cost = item.product.price * item.qty;
-        subtotalSum += cost;
-        messageBlocks.push(`${index + 1}. ${item.product.name}`);
-        messageBlocks.push(`   Category: [${item.product.category}]`);
-        messageBlocks.push(`   Quantity: ${item.qty} unit(s)`);
-        messageBlocks.push(`   Price: R ${item.product.price.toLocaleString('en-ZA')} each`);
-        messageBlocks.push(`   Subtotal: R ${cost.toLocaleString('en-ZA')}`);
-        messageBlocks.push("------------------------------------------");
-      });
-
-      messageBlocks.push(`💎 ESTIMATED GRAND TOTAL: R ${subtotalSum.toLocaleString('en-ZA', {minimumFractionDigits: 2})}`);
-      messageBlocks.push("==========================================");
-      messageBlocks.push("Please secure my allocation and text back availability configurations.");
-
-      toggleCheckoutModal(false);
-      
-      // Clear cart on successful submission redirect
-      userCart = [];
-      evaluateCartCalculations();
-
-      dispatchSecureWhatsApp(messageBlocks.join("\n"));
-    }
-
-    function dispatchSecureWhatsApp(formattedString) {
-      const secureUrl = `https://wa.me/${CONTACT_WHATSAPP}?text=${encodeURIComponent(formattedString)}`;
-      window.open(secureUrl, "_blank");
-    }
-
-    // Navbar Layout Adjustments
-    const mainNav = document.getElementById("mainNav");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 40) {
-        mainNav.classList.add("scrolled");
-      } else {
-        mainNav.classList.remove("scrolled");
-      }
-    });
-
-    // Mobile Hamburger Elements Mapping
-    document.getElementById("hamburger").addEventListener("click", () => {
-      document.getElementById("mobileMenu").classList.add("open");
-    });
-    document.getElementById("mobileClose").addEventListener("click", closeMenu);
-    
-    function closeMenu() {
-      document.getElementById("mobileMenu").classList.remove("open");
-    }
-
-    // Hero Carousel Setup Engine
-    function initHeroCarousel() {
-      const slides = document.querySelectorAll("#heroCarousel .carousel-slide");
-      const dotsContainer = document.getElementById("carouselDots");
-      if (!slides.length) return;
-
-      let cursorIdx = 0;
-
-      slides.forEach((_, i) => {
-        const dot = document.createElement("button");
-        dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
-        dot.addEventListener("click", () => renderSlide(i));
-        dotsContainer.appendChild(dot);
-      });
-
-      const dots = document.querySelectorAll("#carouselDots .carousel-dot");
-
-      function renderSlide(targetIdx) {
-        slides[cursorIdx].classList.remove("active");
-        dots[cursorIdx].classList.remove("active");
-        
-        cursorIdx = targetIdx;
-        
-        slides[cursorIdx].classList.add("active");
-        dots[cursorIdx].classList.add("active");
-      }
-
-      setInterval(() => {
-        let textIdx = (cursorIdx + 1) % slides.length;
-        renderSlide(textIdx);
-      }, 5000);
-    }
-
-    // Intersection Observers for Scroll Reveal Layout Effects
-    function observeScrollAnimations() {
-      const revealItems = document.querySelectorAll(".reveal");
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
-
-      revealItems.forEach(el => obs.observe(el));
-    }
-  </script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+renderProductGrid();
+renderCart();
+</script>
 </body>
 </html>
